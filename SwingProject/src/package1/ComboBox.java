@@ -14,7 +14,7 @@ import java.awt.event.ItemEvent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class Form1 extends JFrame {
+public class ComboBox extends JFrame {
 
 	private JPanel Window;
 	
@@ -30,7 +30,7 @@ public class Form1 extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Form1 frame = new Form1();
+					ComboBox frame = new ComboBox();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -42,7 +42,7 @@ public class Form1 extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Form1() {
+	public ComboBox() {
 		r=255;g=255;b=255;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
