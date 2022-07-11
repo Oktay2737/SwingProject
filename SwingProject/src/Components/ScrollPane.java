@@ -1,4 +1,4 @@
-package package1;
+package Components;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -6,10 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JTextArea;
-import java.awt.Font;
+import javax.swing.JEditorPane;
+import javax.swing.JScrollPane;
 
-public class TextArea extends JFrame {
+public class ScrollPane extends JFrame {
 
 	private JPanel contentPane;
 
@@ -20,7 +20,7 @@ public class TextArea extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TextArea frame = new TextArea();
+					ScrollPane frame = new ScrollPane();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,7 +32,7 @@ public class TextArea extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public TextArea() {
+	public ScrollPane() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -40,11 +40,13 @@ public class TextArea extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("MS Gothic", Font.PLAIN, 16));
-		textArea.setBounds(10, 11, 179, 140);
-		contentPane.add(textArea);
+		JEditorPane editorPane = new JEditorPane();//EDİTOR PANE CONTENTPANE EKLENMİYOR. 
+		//SCROLLPANE'NİN CONSTRUCTORUNA EKLENİYOR.
+		editorPane.setBounds(10, 28, 75, 86);
+		//contentPane.add(editorPane);
 		
-		textArea.setText("bu birinci satır \n\\n ile ikinci satır yazdırlıldı\n\bbold oldumu\b");
+		JScrollPane scrollPane = new JScrollPane(editorPane);
+		scrollPane.setBounds(104, 28, 80, 86);
+		contentPane.add(scrollPane);
 	}
 }

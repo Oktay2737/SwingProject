@@ -1,4 +1,4 @@
-package package1;
+package Components;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -7,9 +7,9 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JEditorPane;
-import javax.swing.JScrollPane;
+import javax.swing.JScrollBar;
 
-public class ScrollPane extends JFrame {
+public class EditorPane extends JFrame {
 
 	private JPanel contentPane;
 
@@ -20,7 +20,7 @@ public class ScrollPane extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ScrollPane frame = new ScrollPane();
+					EditorPane frame = new EditorPane();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,7 +32,7 @@ public class ScrollPane extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ScrollPane() {
+	public EditorPane() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -40,13 +40,10 @@ public class ScrollPane extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JEditorPane editorPane = new JEditorPane();//EDİTOR PANE CONTENTPANE EKLENMİYOR. 
-		//SCROLLPANE'NİN CONSTRUCTORUNA EKLENİYOR.
-		editorPane.setBounds(10, 28, 75, 86);
-		//contentPane.add(editorPane);
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setBounds(10, 40, 119, 51);
+		contentPane.add(editorPane);
 		
-		JScrollPane scrollPane = new JScrollPane(editorPane);
-		scrollPane.setBounds(104, 28, 80, 86);
-		contentPane.add(scrollPane);
+		
 	}
 }

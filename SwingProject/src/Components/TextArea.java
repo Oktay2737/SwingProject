@@ -1,4 +1,4 @@
-package package1;
+package Components;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -6,10 +6,10 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JEditorPane;
-import javax.swing.JScrollBar;
+import javax.swing.JTextArea;
+import java.awt.Font;
 
-public class EditorPane extends JFrame {
+public class TextArea extends JFrame {
 
 	private JPanel contentPane;
 
@@ -20,7 +20,7 @@ public class EditorPane extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					EditorPane frame = new EditorPane();
+					TextArea frame = new TextArea();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,7 +32,7 @@ public class EditorPane extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public EditorPane() {
+	public TextArea() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -40,10 +40,11 @@ public class EditorPane extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JEditorPane editorPane = new JEditorPane();
-		editorPane.setBounds(10, 40, 119, 51);
-		contentPane.add(editorPane);
+		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("MS Gothic", Font.PLAIN, 16));
+		textArea.setBounds(10, 11, 179, 140);
+		contentPane.add(textArea);
 		
-		
+		textArea.setText("bu birinci satır \n\\n ile ikinci satır yazdırlıldı\n\bbold oldumu\b");
 	}
 }

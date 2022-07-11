@@ -1,4 +1,4 @@
-package package1;
+package Components;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -98,7 +98,7 @@ public class DynamicTable extends JFrame {
 		txtSelected = new JTextField();
 		txtSelected.setBounds(288, 210, 86, 20);
 		contentPane.add(txtSelected);
-		txtSelected.setColumns(10);
+		//txtSelected.setColumns(10);
 		
 		
 		btnCreate.addActionListener(new ActionListener() {
